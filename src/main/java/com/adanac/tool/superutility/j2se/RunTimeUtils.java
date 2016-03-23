@@ -1,4 +1,4 @@
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,7 +55,7 @@ public class RunTimeUtils {
 	public static Process getProcess(String cmd) throws IOException {
 		return Runtime.getRuntime().exec(cmd);
 	}
-	
+
 	/**
 	 * 等待进程操作结束
 	 * @param process

@@ -1,4 +1,4 @@
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,43 +12,43 @@ import java.net.URLDecoder;
  * 252878950@qq.com
  */
 public class PathUtils {
-	
+
 	/**
 	 * 获取项目的绝对路径
 	 * @return Sting 获取项目的绝对路径 不同的容器返回的路径不同
 	 */
 	@Deprecated
-	public static String getProjectDrivePath(){
-		return System.getProperty("user.dir"); 
+	public static String getProjectDrivePath() {
+		return System.getProperty("user.dir");
 	}
-	
+
 	/**
 	 * 获取所在的盘符
 	 * @return String
 	 */
 	public static String getDrive() {
-		  return new File("/").getAbsolutePath();
+		return new File("/").getAbsolutePath();
 	}
-	
+
 	/**
 	 * 获取指定类的路径
 	 * @param clazz
 	 * @return String
 	 */
 	public static String getClassDrivePath(Class<?> clazz) {
-		  return clazz.getResource("").getPath().substring(1);
+		return clazz.getResource("").getPath().substring(1);
 	}
-	
+
 	/**
 	 * 获取项目
 	 * @return
 	 * @throws IOException
 	 * @throws URISyntaxException
 	 */
-	public static String getClassPath(){
+	public static String getClassPath() {
 		return Thread.currentThread().getContextClassLoader().getResource("").getPath();
 	}
-	
+
 	public static String getJarPath() throws IOException, URISyntaxException {
 		URL url = PathUtils.class.getProtectionDomain().getCodeSource().getLocation();
 		String filePath = null;

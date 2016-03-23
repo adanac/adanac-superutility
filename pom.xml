@@ -19,6 +19,7 @@
 		<servlet>3.1.0</servlet>
 		<freemarker>2.3.22</freemarker>
 		<flying-saucer>9.0.3</flying-saucer>
+		<json-lib>2.4</json-lib>
 	</properties>
 
 	<!-- 项目发布到私服 -->
@@ -88,6 +89,13 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>${gson}</version>
+		</dependency>
+		<!-- json -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>${json-lib}</version>
+			<classifier>jdk15</classifier>
 		</dependency>
 	</dependencies>
 

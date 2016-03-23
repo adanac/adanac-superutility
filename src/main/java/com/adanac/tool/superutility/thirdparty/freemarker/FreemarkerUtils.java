@@ -8,6 +8,8 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Locale;
 
+import com.adanac.tool.superutility.j2se.StringUtils;
+
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
 import freemarker.template.MalformedTemplateNameException;

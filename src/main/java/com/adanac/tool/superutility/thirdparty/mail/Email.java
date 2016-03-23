@@ -1,4 +1,4 @@
-package org.xdemo.superutil.thirdparty.mail;
+package com.adanac.tool.superutility.thirdparty.mail;
 
 import java.io.File;
 import java.security.GeneralSecurityException;
@@ -11,7 +11,7 @@ public class Email {
 	private String mailServerPort;
 	// 邮件发送者的地址
 	private String fromAddress;
-	//邮件发送者名称
+	// 邮件发送者名称
 	private String fromNickName;
 	// 邮件接收者的地址
 	private String toAddress;
@@ -36,14 +36,15 @@ public class Email {
 		props.put("mail.smtp.host", this.mailServerHost);
 		props.put("mail.smtp.port", this.mailServerPort);
 		props.put("mail.smtp.auth", validate ? "true" : "false");
-		//SSL
-		/*MailSSLSocketFactory sf = new MailSSLSocketFactory();
-		sf.setTrustAllHosts(true);
-		props.put("mail.smtp.ssl.enable", "true");
-		props.put("mail.smtp.ssl.socketFactory", sf);
-		props.put("mail.smtp.socketFactory.fallback", "false");
-		props.setProperty("mail.transport.protocol", "smtps");
-		props.put("mail.smtp.starttls.enable", "true");*/
+		// SSL
+		/*
+		 * MailSSLSocketFactory sf = new MailSSLSocketFactory();
+		 * sf.setTrustAllHosts(true); props.put("mail.smtp.ssl.enable", "true");
+		 * props.put("mail.smtp.ssl.socketFactory", sf);
+		 * props.put("mail.smtp.socketFactory.fallback", "false");
+		 * props.setProperty("mail.transport.protocol", "smtps");
+		 * props.put("mail.smtp.starttls.enable", "true");
+		 */
 		return props;
 	}
 
@@ -134,5 +135,5 @@ public class Email {
 	public void setFromNickName(String fromNickName) {
 		this.fromNickName = fromNickName;
 	}
-	
+
 }

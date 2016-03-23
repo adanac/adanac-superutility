@@ -1,4 +1,4 @@
-package org.xdemo.superutil.test;
+package com.adanac.tool.superutility.test;
 
 import java.util.List;
 
@@ -10,7 +10,8 @@ import org.simpleframework.xml.NamespaceList;
 import org.simpleframework.xml.Root;
 
 @Root(name = "u")
-@NamespaceList({ @Namespace(reference = "urn:loc.gov:books"), @Namespace(reference = "urn:ISBN:0-395-36341-6", prefix = "isbn") })
+@NamespaceList({ @Namespace(reference = "urn:loc.gov:books"),
+		@Namespace(reference = "urn:ISBN:0-395-36341-6", prefix = "isbn") })
 public class User {
 
 	@Element(name = "name", required = false)

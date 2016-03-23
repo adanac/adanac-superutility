@@ -1,4 +1,4 @@
-package org.xdemo.superutil.thirdparty;
+package com.adanac.tool.superutility.thirdparty;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipOutputStream;
+
 /**
  * 文件压缩工具类
  * @author <a href="http://www.xdemo.org">xdemo.org</a>
@@ -47,12 +48,12 @@ public class ApacheZip {
 
 			zos.setEncoding("GBK");
 			zos.setComment(comments);
-			
+
 			for (File file : files) {
-				
+
 				fis = new FileInputStream(file);
 				bis = new BufferedInputStream(fis);
-				
+
 				String entryName = file.getAbsolutePath().replace(dir, "");
 				entry = new ZipEntry(entryName);
 				zos.putNextEntry(entry);
@@ -64,11 +65,11 @@ public class ApacheZip {
 
 			}
 			zos.close();
-			if(fis!=null)
+			if (fis != null)
 				fis.close();
-			if(fos!=null)
+			if (fos != null)
 				fos.close();
-			if(bis!=null)
+			if (bis != null)
 				bis.close();
 
 		} catch (Exception e) {
@@ -93,7 +94,7 @@ public class ApacheZip {
 			for (File file : subfiles) {
 				if (file.isDirectory()) {
 					getFiles(file.getAbsolutePath(), files);
-				}else{
+				} else {
 					files.add(file);
 				}
 			}
@@ -145,11 +146,11 @@ public class ApacheZip {
 				bis.close();
 			}
 			zos.close();
-			if(fis!=null)
+			if (fis != null)
 				fis.close();
-			if(fos!=null)
+			if (fos != null)
 				fos.close();
-			if(bis!=null)
+			if (bis != null)
 				bis.close();
 
 		} catch (Exception e) {
@@ -163,7 +164,7 @@ public class ApacheZip {
 		// File("E:\\新建 Microsoft Office Excel 2007 工作表.xlsx"),new
 		// File("D:\\jdbc.properties")});
 		zipDir("测试", "E:\\zd.zip", "E:\\zd1\\");
-		
+
 	}
 
 }

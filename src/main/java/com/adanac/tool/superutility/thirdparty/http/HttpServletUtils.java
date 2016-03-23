@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.xdemo.superutil.thirdparty.http;
+package com.adanac.tool.superutility.thirdparty.http;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,39 +19,39 @@ import javax.servlet.http.HttpServletResponse;
  * Http下载工具类
  */
 public class HttpServletUtils {
-	
+
 	/**
 	 * 获取项目网络路径
 	 * @param request
 	 * @return
 	 */
-	public static String getContentpath(HttpServletRequest request){
+	public static String getContentpath(HttpServletRequest request) {
 		return request.getContextPath();
 	}
-	
+
 	/**
-     * 获取项目磁盘绝对路径
-     */
-    public static String getRealPath(HttpServletRequest request){
-        return request.getSession().getServletContext().getRealPath("/");
-    }
-    
-    /**
-     * 使用了代理服务器的，无法获取正确地址的，使用这个方法获取访问者的IP地址
-     */
-    public static String getIpAddr(HttpServletRequest request) {
-        String ip = request.getHeader("x-forwarded-for");
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("Proxy-Client-IP");
-        }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("WL-Proxy-Client-IP");
-        }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getRemoteAddr();
-        }
-        return ip;
-    }
+	 * 获取项目磁盘绝对路径
+	 */
+	public static String getRealPath(HttpServletRequest request) {
+		return request.getSession().getServletContext().getRealPath("/");
+	}
+
+	/**
+	 * 使用了代理服务器的，无法获取正确地址的，使用这个方法获取访问者的IP地址
+	 */
+	public static String getIpAddr(HttpServletRequest request) {
+		String ip = request.getHeader("x-forwarded-for");
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
+		return ip;
+	}
 
 	/**
 	 * 下载多个文件

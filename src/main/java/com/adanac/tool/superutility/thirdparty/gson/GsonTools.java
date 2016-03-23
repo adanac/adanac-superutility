@@ -4,7 +4,7 @@
  * 华东工程中心（无锡）
  * 2015版权所有
  */
-package org.xdemo.superutil.thirdparty.gson;
+package com.adanac.tool.superutility.thirdparty.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,11 +42,11 @@ public class GsonTools {
 		if (serializeNulls) {
 			builder.serializeNulls();
 		}
-		
-		if(dateFormat!=null){
+
+		if (dateFormat != null) {
 			builder.setDateFormat(dateFormat);
 		}
-		
+
 		if (exclusion != null) {
 			builder.setExclusionStrategies(exclusion);
 		}

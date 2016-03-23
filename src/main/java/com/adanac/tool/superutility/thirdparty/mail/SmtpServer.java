@@ -1,4 +1,4 @@
-package org.xdemo.superutil.thirdparty.mail;
+package com.adanac.tool.superutility.thirdparty.mail;
 
 import java.util.HashMap;
 import java.util.Map;

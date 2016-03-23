@@ -1,4 +1,4 @@
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import java.util.Properties;
  * 252878950@qq.com
  */
 public class PropertiesUtils {
-	
+
 	/**
 	 * 读取Properties配置文件内容
 	 * @param filePath
@@ -21,12 +21,12 @@ public class PropertiesUtils {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static Properties readProperties(String filePath) throws FileNotFoundException, IOException{
-		Properties properties=new Properties();
+	public static Properties readProperties(String filePath) throws FileNotFoundException, IOException {
+		Properties properties = new Properties();
 		properties.load(new FileInputStream(new File(filePath)));
 		return properties;
 	}
-	
+
 	/**
 	 * 写key-value到properties文件 相同的key会被覆盖 追加不同的key-value
 	 * @param key 键
@@ -36,12 +36,13 @@ public class PropertiesUtils {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void writeProperties(String key,String value,String comment,String filePath) throws FileNotFoundException, IOException{
-		Properties properties=new Properties();
-		
-		File file=new File(filePath);
-		if(file.exists()){
-			FileInputStream fis=new FileInputStream(file);
+	public static void writeProperties(String key, String value, String comment, String filePath)
+			throws FileNotFoundException, IOException {
+		Properties properties = new Properties();
+
+		File file = new File(filePath);
+		if (file.exists()) {
+			FileInputStream fis = new FileInputStream(file);
 			properties.load(fis);
 			fis.close();
 		}

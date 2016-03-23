@@ -12,7 +12,6 @@ public class Usage {
 	public static void main(String[] args) throws Exception {
 		final File file = new File("D:\\upload");
 		new Thread(new Runnable() {
-			@Override
 			public void run() {
 				try {
 					new WatchDir(file, true, new FileActionCallback() {

@@ -1,4 +1,4 @@
-package org.xdemo.superutil.thirdparty;
+package com.adanac.tool.superutility.thirdparty;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
@@ -6,6 +6,7 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+
 /**
  * 汉字转拼音工具类
  * @author <a href="http://www.xdemo.org">xdemo.org</a>
@@ -82,7 +83,7 @@ public class PinYinUtils {
 		byte[] bGBK = cnStr.getBytes();
 		for (int i = 0; i < bGBK.length; i++) {
 			// 将每个字符转换成ASCII码
-			strBuf.append(Integer.toHexString(bGBK[i] & 0xff)+" ");
+			strBuf.append(Integer.toHexString(bGBK[i] & 0xff) + " ");
 		}
 		return strBuf.toString();
 	}

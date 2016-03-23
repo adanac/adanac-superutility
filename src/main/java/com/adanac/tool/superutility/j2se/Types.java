@@ -4,7 +4,7 @@
  * 华东工程中心（无锡）
  * 2015版权所有
  */
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,17 +15,9 @@ import java.util.Date;
  * @Date 2015年6月27日 上午10:31:36
  */
 public enum Types {
-	
-	INT(Integer.class), 
-	SHORT(Short.class), 
-	LONG(Long.class), 
-	CHAR(Character.class), 
-	STRING(String.class), 
-	BYTE(Byte.class), 
-	FLOAT(Float.class), 
-	DOUBLE(Double.class), 
-	DATE(Date.class), 
-	BIGDECIMAL(BigDecimal.class);
+
+	INT(Integer.class), SHORT(Short.class), LONG(Long.class), CHAR(Character.class), STRING(String.class), BYTE(
+			Byte.class), FLOAT(Float.class), DOUBLE(Double.class), DATE(Date.class), BIGDECIMAL(BigDecimal.class);
 
 	private Class<?> clazz;
 

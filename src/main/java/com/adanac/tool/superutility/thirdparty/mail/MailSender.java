@@ -1,4 +1,4 @@
-package org.xdemo.superutil.thirdparty.mail;
+package com.adanac.tool.superutility.thirdparty.mail;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -19,6 +19,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
 /**
  * 邮件发送
  * @author <a href="http://www.xdemo.org">xdemo.org</a>
@@ -91,7 +92,8 @@ public class MailSender {
 			// 根据session创建一个邮件消息
 			Message mailMessage = new MimeMessage(sendMailSession);
 			// 创建邮件发送者地址
-			Address from = new InternetAddress(mail.getFromAddress(),mail.getFromNickName()==null?"":mail.getFromNickName());
+			Address from = new InternetAddress(mail.getFromAddress(),
+					mail.getFromNickName() == null ? "" : mail.getFromNickName());
 			// 设置邮件消息的发送者
 			mailMessage.setFrom(from);
 			// 创建邮件的接收者地址，并设置到邮件消息中,可以设置多个收件人，逗号隔开
@@ -111,12 +113,12 @@ public class MailSender {
 			mainPart.addBodyPart(html);
 
 			// 设置信件的附件(用本地上的文件作为附件)
-			FileDataSource fds=null;
-			DataHandler dh=null;
-			for(File file:mail.getAttachments()){
+			FileDataSource fds = null;
+			DataHandler dh = null;
+			for (File file : mail.getAttachments()) {
 				html = new MimeBodyPart();
-				fds= new FileDataSource(file);
-				dh= new DataHandler(fds);
+				fds = new FileDataSource(file);
+				dh = new DataHandler(fds);
 				html.setFileName(file.getName());
 				html.setDataHandler(dh);
 				mainPart.addBodyPart(html);
@@ -134,30 +136,31 @@ public class MailSender {
 		}
 		return false;
 	}
-	
+
 	@SuppressWarnings("serial")
 	public static void main(String[] args) throws GeneralSecurityException, UnsupportedEncodingException {
-		// 这个类主要是设置邮件  
-        Email mailInfo = new Email();  
-        mailInfo.setMailServerHost(SmtpServer.SMTP_163.get("smtp"));  
-        mailInfo.setMailServerPort(SmtpServer.SMTP_163.get("port"));
-        mailInfo.setValidate(true);
-        mailInfo.setFromNickName("xdemo网站");
-        mailInfo.setUserName("goofy0205@163.com"); // 实际发送者  
-        mailInfo.setPassword("*******");// 您的邮箱密码  
-        mailInfo.setFromAddress("goofy0205@163.com"); // 设置发送人邮箱地址  
-        mailInfo.setToAddress("****@qq.com"); // 设置接受者邮箱地址,多个收件人逗号隔开  
-        mailInfo.setSubject("Ant测试");  
-        mailInfo.setContent("<a href='http://www.xdemo.org'>xdemo</a><img src='http://www.xdemo.org.img.800cdn.com/wp-content/uploads/2014/03/logo1.png'></img>");
-        mailInfo.setAttachments(new ArrayList<File>(){
-        	{
-        		add(new File("D:\\xx.TTF"));
-        		add(new File("D:\\xx.html"));
-        	}
-        });
-        // 这个类主要来发送邮件  
-        MailSender sms = new MailSender();  
-//        sms.sendTextMail(mailInfo); // 发送文体格式  
-        sms.sendHtmlMail(mailInfo); // 发送html格式
+		// 这个类主要是设置邮件
+		Email mailInfo = new Email();
+		mailInfo.setMailServerHost(SmtpServer.SMTP_163.get("smtp"));
+		mailInfo.setMailServerPort(SmtpServer.SMTP_163.get("port"));
+		mailInfo.setValidate(true);
+		mailInfo.setFromNickName("xdemo网站");
+		mailInfo.setUserName("goofy0205@163.com"); // 实际发送者
+		mailInfo.setPassword("*******");// 您的邮箱密码
+		mailInfo.setFromAddress("goofy0205@163.com"); // 设置发送人邮箱地址
+		mailInfo.setToAddress("****@qq.com"); // 设置接受者邮箱地址,多个收件人逗号隔开
+		mailInfo.setSubject("Ant测试");
+		mailInfo.setContent(
+				"<a href='http://www.xdemo.org'>xdemo</a><img src='http://www.xdemo.org.img.800cdn.com/wp-content/uploads/2014/03/logo1.png'></img>");
+		mailInfo.setAttachments(new ArrayList<File>() {
+			{
+				add(new File("D:\\xx.TTF"));
+				add(new File("D:\\xx.html"));
+			}
+		});
+		// 这个类主要来发送邮件
+		MailSender sms = new MailSender();
+		// sms.sendTextMail(mailInfo); // 发送文体格式
+		sms.sendHtmlMail(mailInfo); // 发送html格式
 	}
 }

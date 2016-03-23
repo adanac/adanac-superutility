@@ -1,4 +1,4 @@
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 /**
  * 操作系统判断
@@ -6,44 +6,47 @@ package org.xdemo.superutil.j2se;
  * 252878950@qq.com
  */
 public class SystemUtils {
-	
-	private static final String osname=System.getProperty("os.name").toLowerCase();
-	
+
+	private static final String osname = System.getProperty("os.name").toLowerCase();
+
 	/**
 	 * 判断是否是Linux系统
 	 * @return Boolean
 	 */
-	public static boolean isLinux(){
-		if(osname.indexOf("linux")>=0){
+	public static boolean isLinux() {
+		if (osname.indexOf("linux") >= 0) {
 			return true;
 		}
 		return false;
 	}
+
 	/**
 	 * 判断是否是Linux系统
 	 * @return Boolean
 	 */
-	public static boolean isWindows(){
-		if(osname.indexOf("windows")>=0){
+	public static boolean isWindows() {
+		if (osname.indexOf("windows") >= 0) {
 			return true;
 		}
 		return false;
 	}
+
 	/**
 	 * 判断是否是Linux系统
 	 * @return Boolean
 	 */
-	public static boolean isMac(){
-		if(osname.indexOf("mac")>=0){
+	public static boolean isMac() {
+		if (osname.indexOf("mac") >= 0) {
 			return true;
 		}
 		return false;
 	}
+
 	/**
 	 * 返回系统名称
 	 * @return String
 	 */
-	public static String getOSName(){
+	public static String getOSName() {
 		return osname;
 	}
 

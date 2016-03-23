@@ -1,10 +1,10 @@
-package org.xdemo.superutil.j2se;
+package com.adanac.tool.superutility.j2se;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import org.xdemo.superutil.test.User;
+import com.adanac.tool.superutility.thirdparty.excel.User;
 
 /**
  * Java反射工具类
@@ -66,7 +66,8 @@ public class ReflectUtils {
 	 * @throws IllegalArgumentException
 	 * @throws IllegalAccessException
 	 */
-	public static <T> Object getFieldValue(Object clazzInstance, Object field) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+	public static <T> Object getFieldValue(Object clazzInstance, Object field)
+			throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 
 		Field[] fields = clazzInstance.getClass().getDeclaredFields();
 
@@ -93,7 +94,8 @@ public class ReflectUtils {
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 */
-	public static <T> Object getFieldValue(Class<T> clazz, String field) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, InstantiationException {
+	public static <T> Object getFieldValue(Class<T> clazz, String field) throws NoSuchFieldException, SecurityException,
+			IllegalArgumentException, IllegalAccessException, InstantiationException {
 
 		Field[] fields = clazz.getDeclaredFields();
 
@@ -205,7 +207,8 @@ public class ReflectUtils {
 	 * @throws InvocationTargetException
 	 * @throws InstantiationException
 	 */
-	public static <T> Object invoke(Class<T> clazz, String method) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+	public static <T> Object invoke(Class<T> clazz, String method) throws NoSuchMethodException, SecurityException,
+			IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		Object instance = clazz.newInstance();
 		Method m = clazz.getMethod(method, new Class[] {});
 		return m.invoke(instance, new Object[] {});
@@ -224,7 +227,9 @@ public class ReflectUtils {
 	 * @throws InvocationTargetException
 	 * @throws InstantiationException
 	 */
-	public static <T> Object invoke(Object clazzInstance, String method) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+	public static <T> Object invoke(Object clazzInstance, String method)
+			throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
+			InvocationTargetException, InstantiationException {
 		Method m = clazzInstance.getClass().getMethod(method, new Class[] {});
 		return m.invoke(clazzInstance, new Object[] {});
 	}
@@ -244,7 +249,9 @@ public class ReflectUtils {
 	 * @throws IllegalArgumentException
 	 * @throws InvocationTargetException
 	 */
-	public static <T> Object invoke(Class<T> clazz, String method, Class<T>[] paramClasses, Object[] params) throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+	public static <T> Object invoke(Class<T> clazz, String method, Class<T>[] paramClasses, Object[] params)
+			throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException,
+			IllegalArgumentException, InvocationTargetException {
 		Object instance = clazz.newInstance();
 		Method _m = clazz.getMethod(method, paramClasses);
 		return _m.invoke(instance, params);
@@ -265,7 +272,9 @@ public class ReflectUtils {
 	 * @throws IllegalArgumentException
 	 * @throws InvocationTargetException
 	 */
-	public static <T> Object invoke(Object clazzInstance, String method, Class<T>[] paramClasses, Object[] params) throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+	public static <T> Object invoke(Object clazzInstance, String method, Class<T>[] paramClasses, Object[] params)
+			throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException,
+			IllegalArgumentException, InvocationTargetException {
 		Method _m = clazzInstance.getClass().getMethod(method, paramClasses);
 		return _m.invoke(clazzInstance, params);
 	}
