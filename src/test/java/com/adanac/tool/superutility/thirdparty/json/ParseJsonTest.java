@@ -1,5 +1,8 @@
 package com.adanac.tool.superutility.thirdparty.json;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
 import com.adanac.tool.superutility.entity.Person;
@@ -21,6 +24,19 @@ public class ParseJsonTest {
 		String str1 = parseJson.Object2Json(p1);
 		System.out.println(str1);
 
+	}
+
+	// 将一个java对象數組转换为Json字符串
+	@Test
+	public void testObjects2Json() {
+		List<Person> pList = new ArrayList<Person>();
+		for (int i = 0; i < 3; i++) {
+			Person p = new Person("adanac" + i, i, "male", 27);
+			pList.add(p);
+		}
+		ParseJson parseJson = new ParseJson();
+		String str1 = parseJson.Objects2Json(pList);
+		System.out.println(str1);
 	}
 
 	// 将json字符串转换为java对象

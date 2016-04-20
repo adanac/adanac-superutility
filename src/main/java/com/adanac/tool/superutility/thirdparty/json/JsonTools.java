@@ -15,7 +15,9 @@ public class JsonTools {
 		return str;
 	}
 
-	public static void main(String[] args) {
-
+	public static Object getValueFromJson(String jsonStr) {
+		JSONObject jsonObj = JSONObject.fromObject(jsonStr);
+		return jsonObj.getJSONObject("states").getJSONObject("rect1").get("type");
 	}
+
 }
