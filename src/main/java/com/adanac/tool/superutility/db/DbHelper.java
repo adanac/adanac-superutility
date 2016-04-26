@@ -6,7 +6,15 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbutils.QueryRunner;
 
+/**
+ * QueryRunner工具类 Created by allen
+ */
 public class DbHelper {
+	/**
+	 * getQueryRunner
+	 * 
+	 * @return
+	 */
 	public static QueryRunner getQueryRunner() {
 		// 数据源对象可以理解为连接池的管理者，通过他可以获取数据库的连接
 		DataSource ds = null;

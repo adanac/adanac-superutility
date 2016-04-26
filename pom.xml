@@ -142,11 +142,17 @@
 						</goals>
 					</execution>
 				</executions>
+				<version>2.1.2</version>
 			</plugin>
-			<!-- generate a javadoc -->
+			<!-- generate a javadoc
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+				    <encoding>utf-8</encoding>
+				    <outputEncoding>utf-8</outputEncoding>
+			    </configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -155,7 +161,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
