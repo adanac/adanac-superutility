@@ -1,5 +1,6 @@
 package com.adanac.tool.superutility.thirdparty.json;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.adanac.tool.superutility.entity.Person;
@@ -18,8 +19,8 @@ public class ParseJson {
 		this.jsonStr = str;
 	}
 
-	/** 
-	 * 解析json字符串 
+	/**
+	 * 解析json字符串
 	 */
 	public void parse() {
 		JSONObject jsonObject = JSONObject.fromObject(jsonStr);
@@ -74,6 +75,40 @@ public class ParseJson {
 				+ "props:{text:{value:''}}}},props:{props:{name:{value:'新建流程'},key:{value:''}," + "desc:{value:''}}}}";
 		JSONObject jsonObj = JSONObject.fromObject(jsonStr);
 		System.out.println(jsonObj.getJSONObject("states").getJSONObject("rect1").get("type"));
+	}
+
+	// 将字符串转换为json对象，然后根据建得到相应的值
+	public static void testParse() {
+		ParseJson pj = new ParseJson("{\"name\":\"adanac\",\"num\":123456,\"sex\":\"male\",\"age\":24}");
+		pj.parse();
+	}
+
+	// 将一个java对象转换为Json字符串
+	public static void testObject2JSON() {
+		Person p1 = new Person("adanac1", 123, "male", 23);
+		ParseJson parseJson = new ParseJson();
+		String str1 = parseJson.Object2Json(p1);
+		System.out.println(str1);
+
+	}
+
+	// 将一个java对象數組转换为Json字符串
+	public static void testObjects2Json() {
+		List<Person> pList = new ArrayList<Person>();
+		for (int i = 0; i < 3; i++) {
+			Person p = new Person("adanac" + i, i, "male", 27);
+			pList.add(p);
+		}
+		ParseJson parseJson = new ParseJson();
+		String str1 = parseJson.Objects2Json(pList);
+		System.out.println(str1);
+	}
+
+	// 将json字符串转换为java对象
+	public static void testJSON2Object() {
+		ParseJson pj = new ParseJson("{\"name\":\"adanac2\",\"num\":123456,\"sex\":\"male\",\"age\":25}");
+		Person p = pj.JSON2Object();
+		System.out.println(p.toString());
 	}
 
 	public static void main(String[] args) {
