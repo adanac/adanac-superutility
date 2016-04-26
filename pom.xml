@@ -97,6 +97,11 @@
 			<version>${json-lib}</version>
 			<classifier>jdk15</classifier>
 		</dependency>
+		<dependency>
+		  <groupId>org.apache</groupId>
+		  <artifactId>commons-dbutils</artifactId>
+		  <version>1.6</version>
+		</dependency>
 	</dependencies>
 
 	<build>
